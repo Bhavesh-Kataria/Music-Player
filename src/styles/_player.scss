@@ -1,0 +1,26 @@
+.player {
+  min-height: 20vh;
+  @include flexbox(column, space-between, center);
+  .time-control {
+    @include flexbox(row, space-between, center);
+    width: 60%;
+    margin: 0 auto;
+    .slider {
+      width: 85%;
+      padding: 2rem 0rem;
+      cursor: pointer;
+    }
+    h2 {
+      padding: 1rem 2rem;
+      font-size: 2rem;
+    }
+  }
+  .play-controls {
+    @include flexbox(row, space-between, center);
+    width: 30%;
+    padding: 1rem;
+    svg {
+      cursor: pointer;
+    }
+  }
+}

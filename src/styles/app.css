@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+h1,
+h2,
+h3 {
+  color: #363636;
+}
+
+.song-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.song-container img {
+  border-radius: 50%;
+  width: 20%;
+}
+.song-container h1 {
+  padding: 3rem 1rem 1rem 1rem;
+  font-family: "Yusei Magic", sans-serif;
+}
+.song-container h2 {
+  font-size: 2rem;
+  font-family: "Permanent Marker", cursive;
+  letter-spacing: 0.1rem;
+}
+
+.player {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.player .time-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+.player .time-control .slider {
+  width: 85%;
+  padding: 2rem 0rem;
+  cursor: pointer;
+}
+.player .time-control h2 {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+}
+.player .play-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  padding: 1rem;
+}
+.player .play-controls svg {
+  cursor: pointer;
+}
