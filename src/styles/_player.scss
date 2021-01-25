@@ -1,5 +1,7 @@
 .player {
   min-height: 20vh;
+  //manage
+  margin-left: 10rem;
   @include flexbox(column, space-between, center);
   .time-control {
     @include flexbox(row, space-between, center);

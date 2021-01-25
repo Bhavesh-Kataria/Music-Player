@@ -37,8 +37,68 @@ function chillHop() {
       cover:
         "https://chillhop.com/wp-content/uploads/2020/10/0e5bb63f838ff92eeac142aae944e9f678df13c9-1024x1024.jpg",
       artist: "Ruck P, Shuko",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=10136",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10309",
       color: ["#D64D77", "#7272A8"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Daylight",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg",
+      artist: "Aiguille",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
+      color: ["#EB6258", "#6759A2"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Daylight",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg",
+      artist: "Aiguille",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
+      color: ["#EB6258", "#6759A2"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Daylight",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg",
+      artist: "Aiguille",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
+      color: ["#EB6258", "#6759A2"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Daylight",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg",
+      artist: "Aiguille",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
+      color: ["#EB6258", "#6759A2"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Daylight",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg",
+      artist: "Aiguille",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
+      color: ["#EB6258", "#6759A2"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Daylight",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg",
+      artist: "Aiguille",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
+      color: ["#EB6258", "#6759A2"],
       id: uuidv4(),
       active: false,
     },

@@ -1,5 +1,7 @@
 .song-container {
   min-height: 60vh;
+  //manage
+  margin-left: 10rem;
   @include flexbox(column, center, center);
   font-size: 2rem;
   img {
@@ -8,11 +10,11 @@
   }
   h1 {
     padding: 3rem 1rem 1rem 1rem;
-    font-family: "Yusei Magic", sans-serif;
+    font-weight: 700;
   }
   h2 {
     font-size: 2rem;
-    font-family: "Permanent Marker", cursive;
     letter-spacing: 0.1rem;
+    font-weight: 400;
   }
 }

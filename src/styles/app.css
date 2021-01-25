@@ -14,8 +14,113 @@ h3 {
   color: #363636;
 }
 
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+nav {
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav h1 {
+  font-size: 2.5rem;
+  margin-left: 5rem;
+}
+nav button {
+  border: none;
+  padding: 0.5rem;
+  font-size: 2rem;
+  background: transparent;
+  border: 2px solid #414141;
+  transition: all 0.5s ease-in;
+}
+nav button:hover {
+  color: white;
+  background: #414141;
+}
+
+.library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30rem;
+  height: 100%;
+  background: white;
+  box-shadow: 2px 2px 50px #ccc;
+  overflow: scroll;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+.library h1 {
+  padding: 2.5rem;
+  font-weight: 700;
+  color: black;
+  font-size: 2.5rem;
+}
+
+.drawin {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.library-song {
+  padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.library-song img {
+  width: 30%;
+  margin-right: 1.3rem;
+}
+.library-song:hover {
+  background: #dedeff;
+}
+.library-song .song-description {
+  padding-left: 1.5rem;
+}
+.library-song .song-description h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.library-song .song-description h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+*::webkit-scrollbar {
+  width: 5px;
+}
+
+*::webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
+}
+
+.selected {
+  background-color: #65faff;
+}
+
 .song-container {
   min-height: 60vh;
+  margin-left: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,16 +133,17 @@ h3 {
 }
 .song-container h1 {
   padding: 3rem 1rem 1rem 1rem;
-  font-family: "Yusei Magic", sans-serif;
+  font-weight: 700;
 }
 .song-container h2 {
   font-size: 2rem;
-  font-family: "Permanent Marker", cursive;
   letter-spacing: 0.1rem;
+  font-weight: 400;
 }
 
 .player {
   min-height: 20vh;
+  margin-left: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
