@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -6,15 +6,30 @@ import {
   faBackward,
   faForward,
 } from "@fortawesome/free-solid-svg-icons";
+import { playAudio } from "../util";
 
 const Player = ({
+  songs,
+  changeCurrentSong,
   currentSong,
   isPlaying,
   setIsPlaying,
   audioRef,
   songInfo,
   setSongInfo,
+  setSongs,
 }) => {
+  //useEffect
+  useEffect(() => {
+    const newSongs = songs.map((song) => {
+      if (song.id === currentSong.id) {
+        return { ...song, active: true };
+      } else {
+        return { ...song, active: false };
+      }
+    });
+    setSongs(newSongs);
+  }, [currentSong]);
   //event handlers
   const playSongHandler = () => {
     if (isPlaying) {
@@ -38,6 +53,40 @@ const Player = ({
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
 
+  const skipForward = () => {
+    let nextId = 0;
+    songs.forEach((item, index) => {
+      if (item.id === currentSong.id && index === songs.length - 1) {
+        nextId = songs[0].id;
+        return;
+      } else if (item.id === currentSong.id && index !== songs.length - 1) {
+        nextId = songs[index + 1].id;
+        return;
+      }
+    });
+    currentSong.active = false;
+    changeCurrentSong(songs.find((song) => song.id === nextId));
+    currentSong.active = true;
+    playAudio(isPlaying, audioRef);
+  };
+
+  const goBackward = () => {
+    let prevId = 0;
+    songs.forEach((item, index) => {
+      if (item.id === currentSong.id && index === 0) {
+        prevId = songs[songs.length - 1].id;
+        return;
+      } else if (item.id === currentSong.id && index !== 0) {
+        prevId = songs[index - 1].id;
+        return;
+      }
+    });
+    currentSong.active = false;
+    changeCurrentSong(songs.find((song) => song.id === prevId));
+    currentSong.active = true;
+    playAudio(isPlaying, audioRef);
+  };
+
   return (
     <div className="player">
       <div className="time-control">
@@ -50,17 +99,27 @@ const Player = ({
           type="range"
           onChange={dragHandler}
         />
-        <h2>{getTime(songInfo.duration)}</h2>
+        <h2>{songInfo.duration ? getTime(songInfo.duration) : "0:00"}</h2>
       </div>
       <div className="play-controls">
-        <FontAwesomeIcon className="backward" size="2x" icon={faBackward} />
+        <FontAwesomeIcon
+          onClick={goBackward}
+          className="backward"
+          size="2x"
+          icon={faBackward}
+        />
         <FontAwesomeIcon
           onClick={playSongHandler}
           className="play"
           size="2x"
           icon={isPlaying ? faPause : faPlay}
         />
-        <FontAwesomeIcon className="forward" size="2x" icon={faForward} />
+        <FontAwesomeIcon
+          onClick={skipForward}
+          className="forward"
+          size="2x"
+          icon={faForward}
+        />
       </div>
     </div>
   );

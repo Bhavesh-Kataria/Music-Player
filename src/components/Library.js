@@ -8,6 +8,7 @@ const Library = ({
   currentSong,
   audioRef,
   libraryStatus,
+  setSongs,
 }) => {
   return (
     <div className={`library ${libraryStatus ? "drawin" : ""}`}>
@@ -17,6 +18,7 @@ const Library = ({
           isPlaying={isPlaying}
           songs={songs}
           song={song}
+          setSongs={setSongs}
           currentSong={currentSong}
           changeCurrentSong={changeCurrentSong}
           audioRef={audioRef}
